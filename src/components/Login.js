@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 
 import styles from "../styles/SignUp.module.css"
 
@@ -9,7 +10,7 @@ import { notify } from './toast';
 
 import { validate } from './validate';
 
-const SignUp = () => {
+const Login = () => {
 
     const [data, setData] = useState({
         email: '',
@@ -78,7 +79,7 @@ const SignUp = () => {
                 <div className={styles.buttonField}>
                     <button type='submit'>Login</button>
                     <div>
-                        <p>Don't have an account? <a href='#'>Sign up</a></p>
+                        <p>Don't have an account? <Link to='/signup'>Sign up</Link></p>
                     </div>
                 </div>
             </form>
@@ -87,4 +88,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default Login;

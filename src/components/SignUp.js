@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 
 import styles from "../styles/SignUp.module.css"
 
@@ -124,7 +125,7 @@ const SignUp = () => {
                 <div className={styles.buttonField}>
                     <button type='submit'>Sign Up</button>
                     <div>
-                        <p>Already have an account? <a href='#'>Login</a></p>
+                        <p>Already have an account? <Link to='/login'>Login</Link></p>
                     </div>
                 </div>
             </form>
