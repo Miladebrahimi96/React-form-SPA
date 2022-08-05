@@ -90,7 +90,7 @@ const SignUp = () => {
                     <label>Password</label>
                     <input 
                         className={(errors.password && touched.password) ? styles.notCompleted : styles.formInput}
-                        type='text' 
+                        type='password' 
                         name='password' 
                         value={data.password} 
                         onChange={changeHandler} onFocus={focusHandler} 
@@ -101,7 +101,7 @@ const SignUp = () => {
                     <label>Confirm Password</label>
                     <input 
                         className={(errors.confirmPassword && touched.confirmPassword) ? styles.notCompleted : styles.formInput}
-                        type='text' 
+                        type='password' 
                         name='confirmPassword' 
                         value={data.confirmPassword} 
                         onChange={changeHandler} 

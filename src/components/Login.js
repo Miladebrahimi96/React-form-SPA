@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import styles from "../styles/SignUp.module.css"
 
@@ -35,8 +35,14 @@ const Login = () => {
         setTouched({...touched, [event.target.name]: true})
     }
 
+    const navigate = useNavigate()
+
     const submitHandler = event =>{
         event.preventDefault();
+        setTimeout(() => {
+            navigate('/user')
+        }, 1000)
+
         if(!Object.keys(errors).length){
             notify("Logged in successfully" ,"success");
         }else {
@@ -69,7 +75,7 @@ const Login = () => {
                     <label>Password</label>
                     <input 
                         className={(errors.password && touched.password) ? styles.notCompleted : styles.formInput}
-                        type='text' 
+                        type='password' 
                         name='password' 
                         value={data.password} 
                         onChange={changeHandler} onFocus={focusHandler} 
