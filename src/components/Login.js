@@ -62,18 +62,6 @@ const SignUp = () => {
             <form className={styles.formContainer} onSubmit={submitHandler}>
                 <h2 className={styles.header}>Sign Up</h2>
                 <div className={styles.formField}>
-                    <label>Full Name</label>
-                    <input 
-                        className={(errors.name && touched.name) ? styles.notCompleted : styles.formInput}
-                        type='text' 
-                        name='name' 
-                        value={data.name} 
-                        onChange={changeHandler} 
-                        onFocus={focusHandler}
-                    />
-                    {errors.name && touched.name && <span>{errors.name}</span>}
-                </div>
-                <div className={styles.formField}>
                     <label>Email</label>
                     <input 
                         className={(errors.email && touched.email) ? styles.notCompleted : styles.formInput}
@@ -96,35 +84,10 @@ const SignUp = () => {
                     />
                     {errors.password && touched.password && <span>{errors.password}</span>}
                 </div>
-                <div className={styles.formField}>
-                    <label>Confirm Password</label>
-                    <input 
-                        className={(errors.confirmPassword && touched.confirmPassword) ? styles.notCompleted : styles.formInput}
-                        type='text' 
-                        name='confirmPassword' 
-                        value={data.confirmPassword} 
-                        onChange={changeHandler} 
-                        onFocus={focusHandler} 
-                    />
-                    {errors.confirmPassword && touched.confirmPassword && <span>{errors.confirmPassword}</span>}
-                </div>
-                <div className={styles.formField}>
-                    <div className={styles.checkboxField}>
-                        <label>I accept terms of privacy policy</label>
-                        <input 
-                            type='checkbox' 
-                            name='isAccepted' 
-                            value={data.isAccepted} 
-                            onChange={changeHandler} 
-                            onFocus={focusHandler} 
-                        />
-                    </div>
-                    {errors.isAccepted && touched.isAccepted && <span>{errors.isAccepted}</span>}
-                </div>
                 <div className={styles.buttonField}>
                     <button type='submit'>Sign Up</button>
                     <div>
-                        <p>Already have an account? <a href='#'>Login</a></p>
+                        <p>Don't have an account? <a href='#'>Sign up</a></p>
                     </div>
                 </div>
             </form>
