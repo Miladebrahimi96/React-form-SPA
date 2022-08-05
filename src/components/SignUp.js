@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import styles from "../styles/SignUp.module.css"
 
@@ -41,10 +41,15 @@ const SignUp = () => {
         setTouched({...touched, [event.target.name]: true})
     }
 
+    const navigate = useNavigate();
+
     const submitHandler = event =>{
         event.preventDefault();
         if(!Object.keys(errors).length){
             notify("Signed Up successfully", "success");
+            setTimeout(() => {
+                navigate(`/signup/${data.name.trim()}`, {replace: true})
+            })
         }else {
             notify("Invalid data", "error");
             setTouched({
