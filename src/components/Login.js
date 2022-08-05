@@ -39,12 +39,12 @@ const Login = () => {
 
     const submitHandler = event =>{
         event.preventDefault();
-        setTimeout(() => {
-            navigate('/user')
-        }, 1000)
-
+        
         if(!Object.keys(errors).length){
             notify("Logged in successfully" ,"success");
+            setTimeout(() => {
+                navigate('/user')
+            }, 1000)
         }else {
             notify("Invalid data" ,"error");
             setTouched({
