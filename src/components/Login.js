@@ -12,11 +12,8 @@ import { validate } from './validate';
 const SignUp = () => {
 
     const [data, setData] = useState({
-        name: '',
         email: '',
         password: '',
-        confirmPassword: '',
-        isAccepted: false
     });
 
     const [errors, setErrors] = useState({});
@@ -29,12 +26,9 @@ const SignUp = () => {
     }, [data, touched])
 
     const changeHandler = event => {
-        if(event.target.name === "isAccepted"){
-            setData({...data, [event.target.name]: event.target.checked})
-        }else {
-            setData({...data, [event.target.name]: event.target.value})
-        }
+        setData({...data, [event.target.name]: event.target.value})
     }
+    
 
     const focusHandler = event => {
         setTouched({...touched, [event.target.name]: true})
@@ -47,11 +41,8 @@ const SignUp = () => {
         }else {
             notify("error");
             setTouched({
-                name: true,
                 email: true,
                 password: true,
-                confirmPassword:true,
-                isAccepted: true
             })
         }
     }
@@ -60,7 +51,7 @@ const SignUp = () => {
     return (
         <div className={styles.container}>
             <form className={styles.formContainer} onSubmit={submitHandler}>
-                <h2 className={styles.header}>Sign Up</h2>
+                <h2 className={styles.header}>Login</h2>
                 <div className={styles.formField}>
                     <label>Email</label>
                     <input 
@@ -85,7 +76,7 @@ const SignUp = () => {
                     {errors.password && touched.password && <span>{errors.password}</span>}
                 </div>
                 <div className={styles.buttonField}>
-                    <button type='submit'>Sign Up</button>
+                    <button type='submit'>Login</button>
                     <div>
                         <p>Don't have an account? <a href='#'>Sign up</a></p>
                     </div>
