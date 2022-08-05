@@ -43,9 +43,9 @@ const SignUp = () => {
     const submitHandler = event =>{
         event.preventDefault();
         if(!Object.keys(errors).length){
-            notify("success");
+            notify("Signed Up successfully", "success");
         }else {
-            notify("error");
+            notify("Invalid data", "error");
             setTouched({
                 name: true,
                 email: true,

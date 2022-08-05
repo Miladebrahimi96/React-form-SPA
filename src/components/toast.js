@@ -1,9 +1,9 @@
 import { ToastContainer, toast } from 'react-toastify';
 
-export const notify = (type) => {
+export const notify = (text, type) => {
     if(type === "success"){
-        toast.success("Signed Up successfully", {theme: "colored"})
+        toast.success(text, {theme: "colored"})
     }else {
-        toast.error("Invalid data", {theme: "colored"})
+        toast.error(text, {theme: "colored"})
     }
 }

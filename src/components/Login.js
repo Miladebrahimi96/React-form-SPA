@@ -37,9 +37,9 @@ const SignUp = () => {
     const submitHandler = event =>{
         event.preventDefault();
         if(!Object.keys(errors).length){
-            notify("success");
+            notify("Logged in successfully" ,"success");
         }else {
-            notify("error");
+            notify("Invalid data" ,"error");
             setTouched({
                 email: true,
                 password: true,
